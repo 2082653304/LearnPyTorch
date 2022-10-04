@@ -19,9 +19,11 @@ import numpy as np
 import cv2
 import os
 
-train_list = glob.glob(r"E:\BigData\learn\data\cifar-10-batches-py\test_batch*")
+train_list = glob.glob(r"E:/BigData/learn/data/cifar-10-batches-py/test_batch*")
+# train_list = glob.glob(r"E:/BigData/learn/data/cifar-10-batches-py/data_batch_*")
 print(train_list)
-save_path = r"E:\BigData\learn\data\cifar-10-batches-py\TEST"
+save_path = "E:/BigData/learn/data/cifar-10-batches-py/TEST"
+# save_path = "E:/BigData/learn/data/cifar-10-batches-py/TRAIN"
 
 for l in train_list:
     print(l)
@@ -47,38 +49,6 @@ for l in train_list:
         cv2.imwrite("{}/{}/{}".format(save_path,
                                       im_label_name,
                                       im_name.decode("utf-8")), im_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
