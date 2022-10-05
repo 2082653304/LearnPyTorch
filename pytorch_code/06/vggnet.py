@@ -90,4 +90,5 @@ class VGGbase(nn.Module):
         return out
 
 def VGGNet():
+
     return VGGbase()

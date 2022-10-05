@@ -65,9 +65,9 @@ class MyDataset(Dataset):
         imgs = []
 
         for im_item in im_list:
-            #"E:\BigData\learn\data\cifar-10-batches-py\TRAIN/" \
-            #"airplane/aeroplane_s_000021.png"
-            im_label_name = im_item.split("/")[-2]
+            #"E:\BigData\learn\data\cifar-10-batches-py\TRAIN\" \
+            #"airplane\aeroplane_s_000021.png"
+            im_label_name = im_item.split("\\")[-2]
             imgs.append([im_item, label_dict[im_label_name]])
 
         self.imgs = imgs
@@ -85,8 +85,8 @@ class MyDataset(Dataset):
     def __len__(self):
         return len(self.imgs)
 
-im_train_list = glob.glob("E:\BigData\learn\data\cifar-10-batches-py\TRAIN/*/*.png")
-im_test_list = glob.glob("E:\BigData\learn\data\cifar-10-batches-py\TEST/*/*.png")
+im_train_list = glob.glob("E:\BigData\learn\data\cifar-10-batches-py\TRAIN\*\*.png")
+im_test_list = glob.glob("E:\BigData\learn\data\cifar-10-batches-py\TEST\*\*.png")
 
 train_dataset = MyDataset(im_train_list,
                          transform=train_transform)
